@@ -78,7 +78,8 @@ class userver:
             # самым очищаем используемые ресурсы
             conn.close()
             # удаляем сообщения для данного сокета
-            del self.messages[conn]
+            if conn in self.messages:
+                del self.messages[conn]
         pass
 
     def accept_handle(self,conn):
@@ -156,7 +157,7 @@ if __name__ == "__main__":
     print("run")
     srv=userver("127.0.0.1",8080)
     for i in range(25):
-        srv.check_v2()
+        srv.check()
     print("Ok")
 
 

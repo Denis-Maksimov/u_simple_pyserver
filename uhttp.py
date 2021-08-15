@@ -9,6 +9,7 @@ class uhttp(usrv.userver):
         self.remeta=re.compile(R"^\s{0,}(\S+)\b\s{0,}:\s{0,}(.+)$")
         self.method=''
         self.url=''
+        self.post=''
         self.meta = {}
         self.codes={
             200:b"200 OK",
@@ -51,9 +52,15 @@ class uhttp(usrv.userver):
                     fubar=self.remeta.findall(line)
                     if fubar:
                         dict.update(self.meta,{fubar[0][0]:fubar[0][1]})
+                    else:
+                        self.post=buffer.read()
+                        break
+                else:
+                    self.post=''
                 pass
-
-            if self.method != 'GET':
+            
+            print(self.post)
+            if self.method != 'GET' and self.method != 'POST':
                 self.send_code(conn,418) 
             break
         

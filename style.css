@@ -1,69 +1,93 @@
-body {
-    background-color: #F6A771;
-  }
-  
-  .container {
+body{
+margin: 10 auto;
+    box-sizing: border-box;
+    font-family: serif, Arial, Helvetica, sans-serif;
+    
+}
+header{
+    text-align: center;
+    color: rgba(250, 250, 240,0.7);
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(20, 0,40,0.68);
+}
+.back{
+	background-color: rgba(20, 0,40,0.1);
+
+}
+.container{
+
     display: flex;
-    margin-left: 50px;
-    justify-content: left;
-    align-items: left;
-    /* height: 100vh; */
-  }
-  
-  .text {
-    cursor: pointer;
-    font-size: 2rem;
-    margin-left: 10px;
-    font-family: 'Righteous', cursive;
-    color: #fff;
-    font-weight: 600;
-  }
-  
-  .toggle-button {
-    position: relative;
-    
-    width: 100px;
-    height: 50px;
-    margin: 0;
-  
-    vertical-align: top;
-  
-    background: #ffffff;
-    border: 1px solid #bbc1e1;
-    border-radius: 30px;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-items: center;
+}
+.item{
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    width: 600px;
+
+}
+button{
+    font-size: 16px;
+    border: none;
     outline: none;
+    width: 100%;
+    height: 56px;
+    background-color: rgba(20, 0, 20,0.9);
+    color: white;
+
+}
+button:hover{
+    ont-size: 16px;
     cursor: pointer;
-  
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-      
-    transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 56px;
+    background-color: rgba(100, 0, 100,0.9);
+    color: white;
+
+}
+input{
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 56px;
+
+}
+
+HTML {
+  height: 100%;
+  font-size: 10px;  
   }
-  
-  .toggle-button::after {
-    content: "";
-    
-    position: absolute;
-    left: 3px;
-    top: 1.5px;
-    
-    width: 45px;
-    height: 45px;
-    background-color: blue;
-    border-radius: 50%;
-    
-    transform: translateX(0);
-    
-    transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
-  }
-  
-  .toggle-button:checked::after {
-    transform: translateX(calc(100% + 3px));
-    background-color: #fff;  
-  }
-  
-  .toggle-button:checked {
-    background-color: blue;
-  }
-  
+
+/* BODY {
+  background: radial-gradient(4rem,
+    rgba(255,255,255,0) 80%, 
+    #778691 80%, #778691 99%, 
+    rgba(255,255,255, 0) 
+    ) 0 0,
+    radial-gradient(4rem,
+    rgba(255,255,255,0) 80%, 
+    #778691 80%, #778691 99%,  
+    rgba(255,255,255, 0) 
+    ) 4em 4em,
+    radial-gradient(4.7rem,
+    rgba(255,255,255,0) 50%, 
+    #B1C2B3 50%,
+    #B1C2B3 75%, #B1C2B3 99%, 
+    rgba(255,255,255, 0) 
+    ) 4em 4em,
+    radial-gradient(4.7rem,
+    rgba(255,255,255,0) 50%, 
+    #B1C2B3 50%,
+    #F5FCD0 75%, #B1C2B3 99%, 
+    rgba(255,255,255, 0) 
+    ) 0 0;
+  background-size: 8rem 8rem;
+  background-color: #F5FCD0;
+  } */

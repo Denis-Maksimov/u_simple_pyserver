@@ -9,11 +9,15 @@ class uhtml(uhttp.uhttp):
         # self.local_params=[]
         #remap index to file
         self.file_pages={
-            "index":["test.html",200],
+            "":["index.html",200],
+            "index":["index.html",200],
             "style.css":["style.css",200],
             "script.js":["script.js",200],
-            "404":["test.html",404],
-            "418":["test.html",418],
+            "table.js":["table.js",200],
+            "Thumbnail.jpg":["Thumbnail.jpg",200],
+            "totoro.jpg":["totoro.jpg",200],
+            "404":["404.html",404],
+            "418":["index.html",418],
         }
         self.gen_pages={
             "params.json":[self.parsm,200],
@@ -48,9 +52,10 @@ class uhtml(uhttp.uhttp):
         
 
     def send_file(self,conn,file):
-        with open(file) as file_handler:
+        with open(file,"rb") as file_handler:
             for line in file_handler:
-                conn.send(line.encode())
+                conn.send(line)
+                # conn.send(line.encode())
 
     def parse_url(self):
         s=self.url
@@ -91,13 +96,27 @@ class uhtml(uhttp.uhttp):
 if __name__ == "__main__":
     print("run")
     srv=uhtml(8080)
-    srv.set_param("name",['false'])
-    srv.set_param("fubar",['123.0','1645'])
-    srv.set_param("fuck",['123.0','1645'])
-    for i in range(35):
+    # srv.set_param("name",['false'])
+    # srv.set_param("fubar",['123.0','1645'])
+    # srv.set_param("fuck",['123.0','1645'])
+    for i in range(65):
         srv.check()
         # print(i,"seconds more later")
         # print(srv.get_param("name"))
-        print( json.dumps(srv.params))
+        # print( json.dumps(srv.params))
+        if srv.get_param("scene"):
+            print("run motor")
+            srv.params["scene"]=False
+        if srv.get_param("portal"):
+            print("portal swith")
+            srv.params["portal"]=False
+        if srv.get_param("contrSofit"):
+            print("contrSofit swith")
+            srv.params["contrSofit"]=False
+        if srv.get_param("color"):
+            print(srv.get_param("color"))
+
+        
+        srv.params={}
         pass
     print("Ok")

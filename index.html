@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Ты хорошая!</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <div class="back">
+        <header>
+            <h1>ТЕАТР КУКОЛ</h1>
+        </header>
+        
+            <div class="container">
+                <div class="item">
+                    <button onclick="respSetJSON('contrSofit', true)">Контрсофит</button>
+                </div>
+                <div class="item">
+                    <button onclick="respSetJSON('portal', true)">Портал</button>
+                </div>
+                <div class="item">
+                    <input oninput="respSetJSON('color', this.value)" type="color" value="#960066">
+                </div>
+                <div class="item">
+                    <button onclick="respSetJSON('scene', true)">Поворот сцены</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
